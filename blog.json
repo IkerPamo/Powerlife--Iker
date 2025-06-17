@@ -1,0 +1,72 @@
+{
+  "title": "Powerlifting: Fuerza, Técnica y Progreso",
+  "author": "Powerlife Gym",
+  "datePublished": "2025-06-17",
+  "meta": {
+    "metaTitle": "Blog | Powerlifting: Fuerza, Técnica y Progreso | Powerlife Gym",
+    "metaDescription": "Descubre en nuestro blog técnico todo lo que necesitas saber sobre el powerlifting: movimientos básicos, categorías, beneficios y consejos profesionales."
+  },
+  "heroImage": "https://source.unsplash.com/1200x600/?powerlifting,barbell",
+  "sections": [
+    {
+      "heading": "Los Tres Levantamientos Básicos",
+      "type": "list",
+      "content": [
+        {
+          "title": "Sentadilla",
+          "description": "El levantamiento más técnico, requiere movilidad, fuerza en piernas, cadera y zona media."
+        },
+        {
+          "title": "Press de banca",
+          "description": "Enfocado en pectorales, hombros y tríceps. También implica técnica en el arco y control del cuerpo."
+        },
+        {
+          "title": "Peso muerto",
+          "description": "El más demandante a nivel físico. Trabaja la cadena posterior, agarre y core."
+        }
+      ]
+    },
+    {
+      "heading": "Categorías del Powerlifting",
+      "type": "list",
+      "content": [
+        {
+          "title": "Sexo",
+          "description": "Masculino y femenino."
+        },
+        {
+          "title": "Edad",
+          "description": "Sub-junior (14–18), Junior (19–23), Open, Master (40+)."
+        },
+        {
+          "title": "Peso corporal",
+          "description": "Desde 47 kg hasta 120+ kg (hombres) y 43 kg hasta 84+ kg (mujeres)."
+        },
+        {
+          "title": "Equipo",
+          "description": "Raw (sin equipo asistido) o equipado (con trajes especiales)."
+        }
+      ]
+    },
+    {
+      "heading": "Beneficios del Powerlifting",
+      "type": "ordered",
+      "content": [
+        "Desarrollo de fuerza máxima y funcional.",
+        "Aumento de masa muscular magra.",
+        "Mejora de la salud ósea y articular.",
+        "Fomento de la disciplina, constancia y resiliencia.",
+        "Apoyo a la salud mental y autoestima a través de metas claras."
+      ]
+    },
+    {
+      "heading": "¿Por Dónde Empezar?",
+      "type": "paragraph",
+      "content": "Si quieres comenzar en el powerlifting, lo ideal es trabajar con un entrenador certificado que te ayude a aprender la técnica correcta, planificar tu progreso y prevenir lesiones."
+    }
+  ],
+  "cta": {
+    "text": "Explorar nuestros programas",
+    "url": "servicios.html"
+  }
+}
