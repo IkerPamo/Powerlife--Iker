@@ -3,121 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Powerlife Gym es el lugar ideal para entrenar Powerlifting, con equipo especializado y asesoría para alcanzar tus metas.">
-    <meta name="keywords" content="Powerlifting, entrenamiento de fuerza, gimnasio, powerlife, fuerza, powerlifting España">
+    <meta name="description" content="Powerlife Gym - Entrenamiento de Powerlifting, fuerza y más. Todo lo que necesitas para mejorar tu rendimiento físico.">
+    <meta name="keywords" content="Powerlifting, gimnasio, SBD, fuerza, productos de powerlifting, sentadilla, peso muerto, press banca">
     <meta name="author" content="Iker | Powerlife Gym">
     <title>Powerlife Gym | Potencia y Fuerza</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Barra de navegación */
+        .navbar {
             background-color: #2c3e50;
-            color: #fff;
-        }
-        
-        header {
-            background-color: #34495e;
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-
-        .intro-section {
-            padding: 40px;
-            background-color: #2c3e50;
+            padding: 15px;
             text-align: center;
         }
 
-        .intro-section h2 {
-            font-size: 2.5em;
-            color: #f39c12;
-        }
-
-        .intro-section p {
-            font-size: 1.2em;
-            margin: 20px 0;
-            line-height: 1.5;
-        }
-
-        .cta-button {
-            background-color: #f39c12;
+        .navbar a {
             color: #fff;
-            padding: 15px 30px;
-            font-size: 1.1em;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            margin: 0 15px;
+            font-size: 1.2em;
         }
 
-        .cta-button:hover {
-            background-color: #e67e22;
+        .navbar input[type="text"] {
+            padding: 8px;
+            margin-left: 20px;
+            font-size: 1em;
         }
 
-        .carousel-container {
-            position: relative;
+        .navbar .search-icon {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* Imagen principal (SBD) */
+        .main-image {
             width: 100%;
-            height: 400px;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
-
-        .carousel-item {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .footer {
-            background-color: #34495e;
-            color: #fff;
+            height: 500px;
+            background-image: url('https://via.placeholder.com/1200x500?text=SBD+Powerlifting');
+            background-size: cover;
+            background-position: center;
             text-align: center;
-            padding: 20px;
+            color: white;
+            font-size: 3em;
+            padding: 150px 0;
+        }
+
+        /* Sección de entrenamiento */
+        .training-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px;
+        }
+
+        .training-item {
+            text-align: center;
+            width: 30%;
+        }
+
+        .training-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .training-item h3 {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        .training-item p {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 15px;
             position: fixed;
             width: 100%;
             bottom: 0;
         }
 
-        .footer-links {
-            text-align: center;
-            margin: 10px 0;
-        }
+    </style>
+</head>
+<body>
 
-        .footer-links a {
-            color: #f39c12;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#sobre-nosotros">Sobre Nosotros</a>
+        <input type="text" placeholder="Buscar..." />
+        <span class="search-icon">&#128269;</span> <!-- Icono de lupa -->
+    </div>
 
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
+    <!-- Imagen principal (SBD) -->
+    <div class="main-image">
+        <h1>SBD Powerlifting</h1>
+    </div>
 
-        .search-bar {
-            margin: 20px auto;
-            display: block;
-            padding: 10px;
-            width: 80%;
-            max-width: 600px;
-            font-size: 1.1em;
-        }
+    <!-- Sección de Entrenamiento -->
+    <section class="training-section">
+        <div class="training-item">
+            <img src="https://via.placeholder.com/300x200?text=Sentadilla+Libre" alt="Sentadilla Libre">
+            <h3>Sentadilla Libre</h3>
+            <p>La sentadilla libre es uno de los mejores ejercicios para desarrollar la fuerza en las piernas, especialmente en los glúteos, cuádriceps y femorales.</p>
+        </div>
+        <div class="training-item">
+            <img src="https://via.placeholder.com/300x200?text=Peso+Muerto" alt="Peso Muerto">
+            <h3>Peso Muerto</h3>
+            <p>El peso muerto trabaja todo el cuerpo, pero especialmente la cadena posterior: glúteos, espalda baja, isquiotibiales y core.</p>
+        </div>
+        <div class="training-item">
+            <img src="https://via.placeholder.com/300x200?text=Press+Banca" alt="Press de Banca">
+            <h3>Press de Banca</h3>
+            <p>El press de banca es esencial para desarrollar la fuerza en el torso, trabajando principalmente el pecho, los hombros y los tríceps.</p>
+        </div>
+    </section>
 
-        .language-select {
-            position: absolute;
-            top: 20px;
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Powerlife Gym. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
