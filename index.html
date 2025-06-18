@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gimnasio Élite - Tu Entrenamiento Comienza Aquí</title>
-    <!-- Carga de Tailwind CSS para estilos rápidos y responsivos -->
+    <title>PowerLife-Iker - Tu Entrenamiento Comienza Aquí</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Carga de Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -88,44 +86,41 @@
         }
     </style>
 </head>
-<body class="bg-black text-white min-h-screen py-8 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-        <!-- Encabezado de la página y Navegación -->
-        <header class="text-center mb-12">
-            <h1 class="text-5xl sm:text-6xl font-extrabold text-blue-500 mb-4 animate-pulse">Gimnasio Élite</h1>
+<body class="bg-black text-white min-h-screen py-8 px-4 sm:px-6 lg:px-8 flex flex-col">
+    <div class="max-w-7xl mx-auto flex-grow w-full">
+        <header class="text-center mb-12 relative">
+            <div class="absolute top-0 right-0 flex items-center space-x-4 mt-4 mr-4">
+                <div class="relative">
+                    <label for="language-select" class="sr-only">Seleccionar Idioma</label>
+                    <select id="language-select" onchange="changeLanguage(this.value)"
+                            class="bg-gray-700 text-white py-2 px-3 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="es">ES</option>
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                        <option value="de">DE</option>
+                    </select>
+                </div>
+                <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#socios-elite" class="text-white hover:text-blue-400 text-xl transition duration-300" aria-label="Sección de Socios">
+                    <i class="fas fa-user-circle"></i> </a>
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl font-extrabold text-blue-500 mb-4 animate-pulse">PowerLife-Iker</h1>
             <p class="text-xl text-gray-300">Transforma tu cuerpo, transforma tu vida.</p>
 
-            <!-- Barra de Navegación -->
             <nav class="mt-8 bg-gray-800 p-4 rounded-full shadow-lg">
                 <ul class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3">
                     <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Servicios</a></li>
                     <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Contactos</a></li>
-                    <li><a href="#socios-elite" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Socios</a></li>
                     <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Tienda</a></li>
                     <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
                     <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Testimonios</a></li>
-                    <li>
-                        <a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300" aria-label="Buscar">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </li>
                 </ul>
             </nav>
-
-            <!-- Módulo de Idiomas -->
-            <div class="mt-6 flex justify-center">
-                <label for="language-select" class="sr-only">Seleccionar Idioma</label>
-                <select id="language-select" onchange="changeLanguage(this.value)"
-                        class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="es">Español</option>
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
-                </select>
-            </div>
         </header>
 
-        <!-- Sección del Carrusel de Imágenes del Gimnasio -->
         <section class="mb-16">
             <h2 class="text-4xl font-bold text-center text-white mb-8">Nuestras Instalaciones y Entrenamientos Clave</h2>
             <div class="carousel-container">
@@ -145,11 +140,9 @@
             </div>
         </section>
 
-        <!-- Sección de Ejercicios Principales con Descripción SEO -->
         <section class="mb-16">
             <h2 class="text-4xl font-bold text-center text-white mb-8">Descubre los Pilares de tu Fuerza</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tarjeta para Press de Banca -->
                 <div class="exercise-card">
                     <img src="https://images.pexels.com/photos/1550785/pexels-photo-1550785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Entrenamiento de press de banca en gimnasio.">
                     <h3 class="text-2xl font-semibold mb-3 text-blue-400">Press de Banca</h3>
@@ -158,7 +151,6 @@
                     </p>
                 </div>
 
-                <!-- Tarjeta para Sentadilla Libre -->
                 <div class="exercise-card">
                     <img src="https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mujer realizando sentadilla libre con enfoque en la técnica.">
                     <h3 class="text-2xl font-semibold mb-3 text-green-400">Sentadilla Libre</h3>
@@ -167,7 +159,6 @@
                     </p>
                 </div>
 
-                <!-- Tarjeta para Peso Muerto -->
                 <div class="exercise-card">
                     <img src="https://images.pexels.com/photos/1706694/pexels-photo-1706694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Hombre preparándose para levantar peso muerto con técnica correcta.">
                     <h3 class="text-2xl font-semibold mb-3 text-red-400">Peso Muerto</h3>
@@ -178,7 +169,6 @@
             </div>
         </section>
 
-        <!-- Sección de Socios Destacados / Campo Extraordinario de Socios -->
         <section class="featured-members-section" id="socios-elite">
             <h2 class="text-4xl font-bold mb-6 text-blue-200">¡Únete a Nuestra Familia de Socios Élite!</h2>
             <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
@@ -190,15 +180,30 @@
         </section>
 
 
-        <!-- Sección de Llamada a la Acción o Información de Contacto (existente) -->
         <section class="text-center py-12 bg-gray-900 rounded-xl shadow-lg mt-16">
             <h2 class="text-3xl font-bold text-white mb-6">¿Listo para Empezar tu Transformación?</h2>
-            <p class="text-lg text-gray-400 mb-8">Únete a la comunidad de Gimnasio Élite y alcanza tus objetivos de fitness. Contáctanos hoy mismo.</p>
+            <p class="text-lg text-gray-400 mb-8">Únete a la comunidad de PowerLife-Iker y alcanza tus objetivos de fitness. Contáctanos hoy mismo.</p>
             <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
                 ¡Contacta con Nosotros!
             </a>
         </section>
     </div>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <p>&copy; 2025 PowerLife-Iker. Todos los derechos reservados.</p>
+                <p>Ubicación: Bilbao, País Vasco, España.</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-youtube text-xl"></i></a>
+            </div>
+            <p class="text-sm">Diseñado con pasión por la fuerza y el bienestar.</p>
+        </div>
+    </footer>
 
     <script>
         // JavaScript para la funcionalidad del carrusel
