@@ -1,45 +1,27 @@
-// ------------------------------
-// Powerlife Gym – script.js
-// Funcionalidades interactivas
-// ------------------------------
+let index = 0; // Empezamos desde la primera imagen
+const images = document.querySelectorAll('.carrusel-item'); // Seleccionamos todas las imágenes del carrusel
 
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Animación de entrada (fade-in)
-  const fadeElements = document.querySelectorAll(".fade-in");
-  fadeElements.forEach((el, index) => {
-    el.style.animationDelay = `${index * 0.3}s`;
-    el.classList.add("opacity-0"); // por si falta en el CSS
-    el.classList.add("animate-fadeIn");
-  });
+function showNextImage() {
+    index = (index + 1) % images.length; // Incrementamos el índice, si llegamos al final, volvemos al principio
+    updateCarousel();
+}
 
-  // 2. Scroll suave para enlaces internos
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
+function showPreviousImage() {
+    index = (index - 1 + images.length) % images.length; // Retrocedemos el índice, si llegamos al principio, volvemos al final
+    updateCarousel();
+}
 
-  // 3. Mostrar alerta si el botón de login es clicado (demo)
-  const loginBtn = document.querySelector("a[href='login.html']");
-  if (loginBtn) {
-    loginBtn.addEventListener("click", () => {
-      console.log("Redireccionando a login...");
-    });
-  }
+function updateCarousel() {
+    const offset = -index * 100; // Movemos el carrusel hacia la izquierda por el ancho de una imagen
+    document.querySelector('.carrusel').style.transform = `translateX(${offset}%)`;
+}
 
-  // 4. Control de reproducción del video al salir del foco
-  const video = document.querySelector("video");
-  if (video) {
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        video.pause();
-      } else {
-        video.play();
-      }
-    });
-  }
-});
+// Cambiamos la imagen cada 3 segundos de forma automática
+setInterval(showNextImage, 3000);
+
+// Opción para cambiar la imagen manualmente
+document.querySelector('.carrusel-container').addEventListener('click', showNextImage);
+
+// Inicializamos el carrusel con la primera imagen
+updateCarousel();
+
