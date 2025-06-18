@@ -1,129 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Servicios | Powerlife Gym</title>
-  <meta name="description" content="Descubre los servicios especializados de Powerlife Gym: entrenamiento técnico en powerlifting, asesoría personalizada, programación y más.">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Servicios de entrenamiento | Powerlife Gym",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Powerlife Gym",
-        "url": "https://www.powerlifegym.com"
-      },
-      "serviceType": "Entrenamiento en Powerlifting, Asesoría Técnica, Programación de Fuerza",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Latinoamérica"
-      }
-    }
-  </script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios de entrenamiento de Powerlifting en Powerlife Gym. Mejora tu fuerza y rendimiento con entrenadores especializados.">
+    <meta name="keywords" content="entrenador de powerlifting, servicios de powerlifting, entrenamiento, fuerza, gimnasio">
+    <title>Servicios | Powerlife Gym</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .services-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .services-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .service {
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: calc(33% - 40px);
+            float: left;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .service h3 {
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+
+        .service p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body>
 
-  <!-- HEADER -->
-  <header class="flex items-center justify-between p-6 bg-black bg-opacity-90 fixed top-0 w-full z-50">
-    <h1 class="text-2xl font-bold">Powerlife Gym</h1>
-    <nav class="space-x-4 hidden md:block">
-      <a href="index.html" class="hover:text-yellow-400">Inicio</a>
-      <a href="nosotros.html" class="hover:text-yellow-400">Nosotros</a>
-      <a href="servicios.html" class="text-yellow-400 font-semibold">Servicios</a>
-      <a href="contacto.html" class="hover:text-yellow-400">Contacto</a>
-    </nav>
-    <a href="login.html" class="bg-yellow-400 text-black px-4 py-2 rounded font-semibold hover:bg-yellow-300">Acceso Usuarios</a>
-  </header>
+    <!-- Header Section -->
+    <header>
+        <h1>Servicios de Entrenamiento</h1>
+        <p>Optimiza tu rendimiento con nuestros entrenadores especializados en Powerlifting</p>
+    </header>
 
-  <!-- CONTENIDO -->
-  <main class="pt-32 px-6 md:px-20 pb-24">
-    <section class="max-w-5xl mx-auto text-center">
-      <h1 class="text-4xl font-bold text-yellow-400 mb-6">Nuestros Servicios</h1>
-      <p class="text-gray-300 text-lg mb-12">En Powerlife Gym ofrecemos servicios diseñados para atletas de todos los niveles que buscan mejorar su rendimiento en el <strong>powerlifting</strong> y el entrenamiento de fuerza.</p>
+    <!-- Servicios Section -->
+    <section class="services-section">
+        <h2>Servicios de Powerlifting</h2>
+
+        <div class="service">
+            <img src="https://via.placeholder.com/600x400?text=Entrenamiento+Personalizado" alt="Entrenamiento Personalizado">
+            <h3>Entrenamiento Personalizado</h3>
+            <p>Entrena de forma individualizada con un plan de entrenamiento adaptado a tus objetivos y capacidades. Mejora tus levantamientos y alcanza tus metas.</p>
+        </div>
+
+        <div class="service">
+            <img src="https://via.placeholder.com/600x400?text=Preparación+Competitiva" alt="Preparación Competitiva">
+            <h3>Preparación Competitiva</h3>
+            <p>Te preparamos para competiciones de powerlifting, con planes específicos para maximizar tu rendimiento en los días de competencia. ¡Domina el escenario!</p>
+        </div>
+
+        <div class="service">
+            <img src="https://via.placeholder.com/600x400?text=Asesoría+en+Técnica" alt="Asesoría en Técnica">
+            <h3>Asesoría en Técnica</h3>
+            <p>Mejora tu técnica de levantamientos (sentadilla, press de banca, peso muerto) para evitar lesiones y optimizar la fuerza. Trabaja en cada detalle de tus movimientos.</p>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="service">
+            <img src="https://via.placeholder.com/600x400?text=Entrenamiento+Online" alt="Entrenamiento Online">
+            <h3>Entrenamiento Online</h3>
+            <p>Si no puedes asistir en persona, ofrecemos planes de entrenamiento online, con seguimiento semanal y ajustes constantes para que avances desde cualquier lugar.</p>
+        </div>
+
+        <div class="service">
+            <img src="https://via.placeholder.com/600x400?text=Planificación+de+Rendimiento" alt="Planificación de Rendimiento">
+            <h3>Planificación de Rendimiento</h3>
+            <p>Elabora un plan de entrenamiento a largo plazo para mejorar tu rendimiento en el powerlifting. Con seguimiento constante y ajustes a medida que avanzas.</p>
+        </div>
+
+        <div class="service">
+            <img src="https://via.placeholder.com/600x400?text=Recuperación+y+Prevención" alt="Recuperación y Prevención">
+            <h3>Recuperación y Prevención</h3>
+            <p>Entrenamos no solo para levantar más peso, sino también para prevenir y recuperarnos de lesiones. Estrategias para mantenerte en forma durante todo el año.</p>
+        </div>
+
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <!-- Servicio 1 -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-yellow-500 transition">
-        <h2 class="text-2xl font-semibold text-yellow-300 mb-2">Entrenamiento Técnico</h2>
-        <p class="text-gray-400 mb-4">Sesiones personalizadas para perfeccionar tu técnica en los tres grandes: sentadilla, press de banca y peso muerto.</p>
-        <ul class="list-disc list-inside text-gray-400 text-sm">
-          <li>Corrección postural</li>
-          <li>Análisis de vídeo</li>
-          <li>Feedback en tiempo real</li>
-        </ul>
-      </div>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Powerlife Gym. Todos los derechos reservados.</p>
+    </footer>
 
-      <!-- Servicio 2 -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-yellow-500 transition">
-        <h2 class="text-2xl font-semibold text-yellow-300 mb-2">Programación Personalizada</h2>
-        <p class="text-gray-400 mb-4">Planes de fuerza periodizados y adaptados a tus objetivos, nivel y calendario competitivo.</p>
-        <ul class="list-disc list-inside text-gray-400 text-sm">
-          <li>Bloques de fuerza e hipertrofia</li>
-          <li>Evaluación mensual</li>
-          <li>Progresión individual</li>
-        </ul>
-      </div>
-
-      <!-- Servicio 3 -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-yellow-500 transition">
-        <h2 class="text-2xl font-semibold text-yellow-300 mb-2">Asesoría Online</h2>
-        <p class="text-gray-400 mb-4">Entrena con nosotros desde cualquier lugar con sesiones virtuales y soporte vía app o videoanálisis.</p>
-        <ul class="list-disc list-inside text-gray-400 text-sm">
-          <li>Comunicación constante</li>
-          <li>Entrenamientos cargados en plataforma</li>
-          <li>Seguimiento técnico y mental</li>
-        </ul>
-      </div>
-
-      <!-- Servicio 4 -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-yellow-500 transition">
-        <h2 class="text-2xl font-semibold text-yellow-300 mb-2">Clínicas de Powerlifting</h2>
-        <p class="text-gray-400 mb-4">Jornadas prácticas para clubes o grupos donde abordamos la técnica, biomecánica y programación.</p>
-        <ul class="list-disc list-inside text-gray-400 text-sm">
-          <li>Ideal para equipos deportivos</li>
-          <li>Conferencias y práctica guiada</li>
-          <li>Incluye asesoría post-clínica</li>
-        </ul>
-      </div>
-
-      <!-- Servicio 5 -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-yellow-500 transition">
-        <h2 class="text-2xl font-semibold text-yellow-300 mb-2">Evaluaciones de Fuerza</h2>
-        <p class="text-gray-400 mb-4">Test inicial y seguimiento de progresos con herramientas y registros precisos.</p>
-        <ul class="list-disc list-inside text-gray-400 text-sm">
-          <li>1RM estimado o real</li>
-          <li>Comparativa por ciclos</li>
-          <li>Informe técnico</li>
-        </ul>
-      </div>
-
-      <!-- Servicio 6 -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-yellow-500 transition">
-        <h2 class="text-2xl font-semibold text-yellow-300 mb-2">Preparación Competitiva</h2>
-        <p class="text-gray-400 mb-4">Te llevamos desde la base hasta la tarima: estrategias, picos de rendimiento y manejo emocional.</p>
-        <ul class="list-disc list-inside text-gray-400 text-sm">
-          <li>Planificación de pesajes</li>
-          <li>Coaching en competencia</li>
-          <li>Simulación de meet</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-center text-sm py-6 border-t border-gray-700 mt-20">
-    <p>&copy; 2025 Powerlife Gym. Todos los derechos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
