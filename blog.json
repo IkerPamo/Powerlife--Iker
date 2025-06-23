@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Powerlifting: Los 3 Grandes Levantamientos</title>
+    <style>
+        /* Aquí puedes añadir tus estilos CSS */
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1, h2 { color: #333; }
+        img { max-width: 100%; height: auto; display: block; margin: 15px 0; }
+        .container { max-width: 800px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        hr { border: 0; height: 1px; background-color: #eee; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>¡Domina la Tarima: Tu Guía Esencial de Powerlifting!</h2>
+        <p>¿Alguna vez te has preguntado qué es el powerlifting o cómo esos atletas levantan pesos tan impresionantes? ¡Estás en el lugar correcto! El <strong>powerlifting</strong> es un deporte de fuerza que desafía los límites humanos a través de tres levantamientos fundamentales: la sentadilla, el press de banca y el peso muerto. No se trata solo de levantar pesado, sino de hacerlo con técnica, disciplina y una dedicación inquebrantable.</p>
+        <p>En esta entrada del blog, vamos a desglosar los tres pilares del powerlifting, explicándote brevemente cada uno y por qué son tan cruciales en este deporte.</p>
 
+        <hr>
+
+        <h3>La Sentadilla (Squat)</h3>
+        <img src="url_de_tu_imagen_de_sentadilla.jpg" alt="Persona haciendo sentadilla">
+        <p>La <strong>sentadilla</strong> es, sin duda, la reina de todos los ejercicios. Es un movimiento compuesto que trabaja una gran cantidad de músculos, incluyendo cuádriceps, glúteos, isquiotibiales y la parte baja de la espalda. En powerlifting, el objetivo es bajar la barra (que reposa sobre los hombros) hasta que las caderas estén por debajo de la parte superior de las rodillas, y luego levantarse de nuevo de forma controlada. Es un test brutal de fuerza de piernas y estabilidad del core.</p>
+
+        <hr>
+
+        <h3>El Press de Banca (Bench Press)</h3>
+        <img src="url_de_tu_imagen_de_press_de_banca.jpg" alt="Persona haciendo press de banca">
+        <p>El <strong>press de banca</strong> es el levantamiento que pone a prueba la fuerza de la parte superior del cuerpo. Acostado en un banco, el atleta baja la barra hasta el pecho y luego la empuja hacia arriba hasta que los brazos estén completamente extendidos. Este ejercicio se centra principalmente en el pecho (pectorales), los hombros (deltoides) y los tríceps. Es un favorito en cualquier gimnasio y un excelente indicador de la fuerza de empuje.</p>
+
+        <hr>
+
+        <h3>El Peso Muerto (Deadlift)</h3>
+        <img src="url_de_tu_imagen_de_peso_muerto.jpg" alt="Persona haciendo peso muerto">
+        <p>El <strong>peso muerto</strong> es el verdadero rey de la fuerza bruta y el último de los tres levantamientos. Consiste en levantar una barra cargada desde el suelo hasta una posición erguida, con las caderas y las rodillas bloqueadas y los hombros hacia atrás. Es un ejercicio de cuerpo completo que desafía la espalda baja, los glúteos, los isquiotibiales, los trapecios y el agarre. No hay un levantamiento que te haga sentir tan poderoso como un peso muerto bien ejecutado.</p>
+
+        <hr>
+
+        <h3>¡Tu Viaje en el Powerlifting Comienza Ahora!</h3>
+        <p>Estos tres ejercicios son la base del powerlifting, pero son mucho más que solo levantar pesas. Son una prueba de dedicación, técnica y fortaleza mental. Si estás interesado en el powerlifting, te animo a investigar más, buscar un buen entrenador y, lo más importante, empezar con la técnica correcta. ¡El mundo del hierro te espera!</p>
+    </div>
+</body>
+</html>
