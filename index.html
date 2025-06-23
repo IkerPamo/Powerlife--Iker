@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Powerlife Gym</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    header nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .search-bar input {
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #222;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .producto {
+      width: calc(33% - 20px);
+      border: 1px solid #ccc;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .producto img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .producto button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #111;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #carrito {
+      margin-top: 40px;
+    }
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Powerlife Gym</strong></div>
+    <nav>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#blog">Blog</a>
+      <a href="#productos">Productos</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar...">
+    </div>
+  </header>
 
+  <section id="nosotros">
+    <h2>Nosotros</h2>
+    <p>En Powerlife Gym nos especializamos en el entrenamiento de fuerza y powerlifting. Nuestra misión es formar atletas fuertes, sanos y disciplinados. Llevamos más de 6 años ayudando a personas a alcanzar su máximo potencial.</p>
+  </section>
+
+  <section id="blog">
+    <h2>Blog: Los 3 ejercicios básicos del powerlifting</h2>
+    <h3>Sentadilla Libre</h3>
+    <p>La sentadilla libre es la base del entrenamiento de piernas. Este ejercicio trabaja cuádriceps, glúdeos y core. Una técnica adecuada es clave para evitar lesiones.</p>
+
+    <h3>Press Banca</h3>
+    <p>El press de banca se enfoca en el pecho, hombros y tríceps. Es uno de los mejores medidores de fuerza superior y parte fundamental del powerlifting.</p>
+
+    <h3>Peso Muerto</h3>
+    <p>El peso muerto trabaja toda la cadena posterior: espalda baja, glúdeos, femorales. Es un ejercicio demandante pero esencial para la fuerza total del cuerpo.</p>
+  </section>
+
+  <section id="productos">
+    <h2>Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x150?text=Rodilleras" alt="Rodilleras">
+        <p><strong>Rodilleras Powermax</strong></p>
+        <p>Precio: 29,99€</p>
+        <button onclick="agregarAlCarrito('Rodilleras Powermax', 29.99)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x150?text=Muñequeras" alt="Muñequeras">
+        <p><strong>Muñequeras Titan</strong></p>
+        <p>Precio: 19,99€</p>
+        <button onclick="agregarAlCarrito('Muñequeras Titan', 19.99)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x150?text=Cinturón" alt="Cinturón de levantamiento">
+        <p><strong>Cinturón de levantamiento Pro</strong></p>
+        <p>Precio: 49,99€</p>
+        <button onclick="agregarAlCarrito('Cinturón de levantamiento Pro', 49.99)">Agregar al carrito</button>
+      </div>
+    </div>
+    <div id="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p><strong>Total: </strong><span id="total">0.00</span>€</p>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes dudas o quieres unirte a nuestro equipo? Escríbenos a <a href="mailto:info@powerlifegym.com">info@powerlifegym.com</a> o síguenos en redes sociales.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Powerlife Gym. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    let carrito = [];
+    function agregarAlCarrito(producto, precio) {
+      carrito.push({ producto, precio });
+      actualizarCarrito();
+    }
+    function actualizarCarrito() {
+      const lista = document.getElementById('lista-carrito');
+      const total = document.getElementById('total');
+      lista.innerHTML = '';
+      let suma = 0;
+      carrito.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.producto} - ${item.precio.toFixed(2)}€`;
+        lista.appendChild(li);
+        suma += item.precio;
+      });
+      total.textContent = suma.toFixed(2);
+    }
+  </script>
+</body>
+</html>
