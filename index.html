@@ -12,6 +12,7 @@
             padding: 0;
             box-sizing: border-box;
             background-color: #f4f4f4;
+            scroll-behavior: smooth; /* Para un desplazamiento suave al hacer clic en las anclas */
         }
 
         /* Estilos de la barra de navegación */
@@ -85,52 +86,3 @@
 
         .navbar-right .login-btn:hover {
             background-color: #cc0000; /* Rojo más oscuro al pasar el ratón */
-        }
-
-        /* Contenido principal */
-        .content {
-            padding: 40px 20px;
-            text-align: center;
-            max-width: 1200px;
-            margin: 20px auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .content h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            color: #666;
-            line-height: 1.6;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="navbar">
-        <div class="navbar-left">
-            <span class="navbar-brand">SBD</span>
-            <a href="#contact">Contacto</a>
-            <a href="#about">Sobre Nosotros</a>
-            <a href="#products">Productos</a>
-        </div>
-        <div class="navbar-right">
-            <a href="#search" class="icon-link"><i class="fas fa-search"></i></a>
-            <a href="#cart" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
-            <button class="login-btn">Iniciar Sesión</button>
-        </div>
-    </div>
-
-    <div class="content">
-        <h1>¡Bienvenido a SBD!</h1>
-        <p>Aquí encontrarás una amplia variedad de nuestros productos de alta calidad.</p>
-        <p>Explora nuestras categorías y encuentra lo que necesitas.</p>
-        <p>Estamos comprometidos con la excelencia y la satisfacción de nuestros clientes.</p>
-    </div>
-
-</body>
-</html>
