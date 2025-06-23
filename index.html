@@ -75,6 +75,151 @@
                 margin-top: 10px;
             }
         }
+
+        /* Estilos del carrusel */
+        .carousel-container {
+            position: relative;
+            max-width: 900px; /* Ancho máximo del carrusel */
+            margin: auto;
+            overflow: hidden;
+            border-radius: 1rem; /* Bordes redondeados */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra */
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 400px; /* Altura fija para las imágenes del carrusel */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+            border-radius: 1rem; /* Bordes redondeados */
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 9999px; /* Botones redondos */
+            font-size: 1.5rem;
+            line-height: 1;
+            z-index: 10;
+        }
+        .carousel-button.prev {
+            left: 1rem;
+        }
+        .carousel-button.next {
+            right: 1rem;
+        }
+
+        /* Estilos de las tarjetas de ejercicios */
+        .exercise-card {
+            background-color: #1a1a1a; /* Un gris oscuro para las tarjetas */
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #e0e0e0; /* Texto gris claro */
+        }
+        .exercise-card img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        /* Estilos del blog */
+        .blog-post {
+            background-color: #1a1a1a;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .blog-post img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 0.75rem;
+            margin: 1.5rem auto;
+            display: block;
+            object-fit: cover;
+        }
+        .blog-post h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #60a5fa; /* Azul para títulos de posts */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .blog-post p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #9ca3af; /* Gris para metadatos */
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Estilos para la sección de socios destacados */
+        .featured-members-section {
+            background: linear-gradient(135deg, #2a4365, #1d4062); /* Gradiente de fondo */
+            padding: 3rem 2rem;
+            border-radius: 1.5rem;
+            margin-top: 4rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Estilos para las secciones del footer */
+        .footer-section h4 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #60a5fa; /* Azul para los títulos del footer */
+            font-size: 1.1em;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-section ul li a {
+            color: #cbd5e1; /* Gris claro para los enlaces */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+        .social-icons a {
+            color: #cbd5e1;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 <body class="bg-black text-white">
@@ -83,7 +228,7 @@
     <nav class="bg-gray-900 p-4 shadow-lg flex justify-between items-center flex-wrap md:flex-row">
         <!-- Logo/Marca a la izquierda -->
         <div class="flex items-center mb-4 md:mb-0">
-            <a href="#" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">PowerLife--Iker</a>
+            <a href="index.html" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">PowerLife--Iker</a>
         </div>
 
         <!-- Enlaces de navegación principales (centrados en escritorio, apilados en móvil) -->
@@ -92,7 +237,7 @@
             <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Sobre Nosotros</a></li>
             <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Productos</a></li>
             <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Tienda Física</a></li>
-            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
+            <li><a href="#blog-section" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
             <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
         </ul>
 
@@ -113,8 +258,212 @@
         </div>
     </nav>
 
-    <!-- No se incluye más contenido HTML por debajo de la barra de navegación -->
-    <!-- Este espacio estaría vacío o podría usarse para scripts JS no relacionados con el DOM -->
+    <!-- Contenido principal de la página de inicio -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Sección de Bienvenida -->
+        <section class="text-center bg-gray-800 p-8 rounded-lg shadow-lg mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-500 mb-4">Bienvenido a PowerLife--Iker</h1>
+            <p class="text-xl text-gray-300 mb-6">Transforma tu cuerpo, transforma tu vida con el poder del powerlifting.</p>
+        </section>
 
+        <!-- Sección del Carrusel de Imágenes del Gimnasio -->
+        <section class="mb-16">
+            <h2 class="text-4xl font-bold text-center text-white mb-8">Nuestras Instalaciones y Entrenamientos Clave</h2>
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carouselSlides">
+                    <div class="carousel-slide">
+                        <img src="https://images.pexels.com/photos/863977/pexels-photo-863977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Hombre realizando press de banca en un gimnasio moderno.">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mujer realizando sentadilla libre con barra en el rack de sentadillas.">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.pexels.com/photos/1767676/pexels-photo-1767676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Atleta levantando una barra del suelo en un ejercicio de peso muerto.">
+                    </div>
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Sección de Ejercicios Principales con Descripción SEO -->
+        <section class="mb-16">
+            <h2 class="text-4xl font-bold text-center text-white mb-8">Descubre los Pilares de tu Fuerza</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta para Press de Banca -->
+                <div class="exercise-card">
+                    <img src="https://images.pexels.com/photos/1550785/pexels-photo-1550785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Entrenamiento de press de banca en gimnasio.">
+                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Press de Banca</h3>
+                    <p class="text-md leading-relaxed">
+                        El <strong>press de banca</strong> es fundamental para desarrollar la fuerza y el volumen en el pecho, hombros y tríceps. Esencial para un tren superior potente, este ejercicio multiarticular es clave en cualquier rutina de fuerza y musculación. Mejora tu potencia y tamaño muscular de forma efectiva.
+                    </p>
+                </div>
+
+                <!-- Tarjeta para Sentadilla Libre -->
+                <div class="exercise-card">
+                    <img src="https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mujer realizando sentadilla libre con enfoque en la técnica.">
+                    <h3 class="text-2xl font-semibold mb-3 text-green-400">Sentadilla Libre</h3>
+                    <p class="text-md leading-relaxed">
+                        La <strong>sentadilla libre</strong> es el rey de los ejercicios de pierna, trabajando cuádriceps, glúteos, isquiotibiales y la zona lumbar. Imprescindible para construir una base sólida de fuerza, mejorar la movilidad y quemar calorías. Un movimiento funcional que potencia todo tu cuerpo.
+                    </p>
+                </div>
+
+                <!-- Tarjeta para Peso Muerto -->
+                <div class="exercise-card">
+                    <img src="https://images.pexels.com/photos/1706694/pexels-photo-1706694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Hombre preparándose para levantar peso muerto con técnica correcta.">
+                    <h3 class="text-2xl font-semibold mb-3 text-red-400">Peso Muerto</h3>
+                    <p class="text-md leading-relaxed">
+                        El <strong>peso muerto</strong> es uno de los ejercicios más completos para ganar fuerza en la espalda, piernas y core. Optimiza el desarrollo de la cadena posterior y mejora la postura. Clave para la fuerza funcional y el levantamiento de peso, te ayudará a construir un físico robusto y resistente.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva Sección del Blog en la página principal -->
+        <section id="blog-section" class="mb-16">
+            <h2 class="text-4xl font-bold text-center text-white mb-8">Nuestro Blog de Powerlifting</h2>
+            <p class="text-xl text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+                Artículos, consejos y novedades para potenciar tu fuerza y conocimiento.
+            </p>
+            <div class="grid grid-cols-1 gap-8">
+                <!-- Entrada de Blog 1: La Importancia de la Técnica en Powerlifting -->
+                <article class="blog-post">
+                    <h2>La Importancia de la Técnica en Powerlifting</h2>
+                    <img src="https://placehold.co/600x350/60a5fa/ffffff?text=Técnica+Powerlifting" alt="Imagen de una persona realizando peso muerto con técnica perfecta.">
+                    <p>
+                        En el mundo del powerlifting, la técnica no es solo una recomendación; es el pilar fundamental sobre el que se construye el éxito y se previene la lesión. Una ejecución impecable en sentadilla, press de banca y peso muerto no solo te permitirá levantar más peso de forma segura, sino que también optimizará el desarrollo muscular y la eficiencia de tu entrenamiento. Descubre por qué invertir tiempo en perfeccionar tu forma es la mejor estrategia a largo plazo.
+                    </p>
+                    <p class="blog-meta">Publicado el 23 de Junio, 2025 por Equipo PowerLife--Iker</p>
+                </article>
+
+                <!-- Entrada de Blog 2: Nutrición para el Atleta de Fuerza -->
+                <article class="blog-post">
+                    <h2>Nutrición para el Atleta de Fuerza: Combustible para el Crecimiento</h2>
+                    <img src="https://placehold.co/600x350/60a5fa/ffffff?text=Nutrición+Atleta" alt="Imagen de alimentos saludables en una encimera de cocina.">
+                    <p>
+                        La dieta juega un papel tan crucial como el entrenamiento en el powerlifting. Lo que comes alimenta tus músculos, repara tejidos y te proporciona la energía necesaria para sesiones intensas. Exploramos los macronutrientes esenciales, la importancia de la hidratación y cómo la suplementación inteligente puede complementar tu ingesta diaria para maximizar la recuperación y el crecimiento.
+                    </p>
+                    <p class="blog-meta">Publicado el 20 de Junio, 2025 por Nutricionista Invitado</p>
+                </article>
+
+                <!-- Entrada de Blog 3: Superando Estancamientos: Estrategias de Periodización -->
+                <article class="blog-post">
+                    <h2>Superando Estancamientos: Estrategias de Periodización Avanzada</h2>
+                    <img src="https://placehold.co/600x350/60a5fa/ffffff?text=Periodización+Entrenamiento" alt="Imagen de pesas en un rack, simbolizando la sobrecarga progresiva.">
+                    <p>
+                        Todo atleta de fuerza se enfrenta a estancamientos en algún momento. La clave para seguir progresando reside en la periodización inteligente de tu entrenamiento. Te desvelamos diferentes modelos de periodización (lineal, ondulante, bloque) y cómo puedes implementarlos para mantener tu progreso constante, evitar el sobreentrenamiento y alcanzar nuevos récords personales.
+                    </p>
+                    <p class="blog-meta">Publicado el 15 de Junio, 2025 por Entrenador Senior</p>
+                </article>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    Ver todos los Artículos del Blog
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Sección de Socios Destacados / Campo Extraordinario de Socios -->
+        <section class="featured-members-section" id="socios-elite">
+            <h2 class="text-4xl font-bold mb-6 text-blue-200">¡Únete a Nuestra Familia de Socios Élite!</h2>
+            <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                Forma parte de una comunidad dedicada a la excelencia física. Disfruta de beneficios exclusivos, planes de entrenamiento personalizados, acceso a eventos especiales y el apoyo de nuestros expertos. Tu transformación comienza con una membresía.
+            </p>
+            <a href="#socios-elite" class="inline-block bg-white hover:bg-gray-200 text-blue-800 font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-xl text-xl">
+                Hazte Socio Ahora
+            </a>
+        </section>
+
+        <!-- Sección de Llamada a la Acción o Información de Contacto (existente) -->
+        <section class="text-center py-12 bg-gray-900 rounded-xl shadow-lg mt-16">
+            <h2 class="text-3xl font-bold text-white mb-6">¿Listo para Empezar tu Transformación?</h2>
+            <p class="text-lg text-gray-400 mb-8">Únete a la comunidad de PowerLife--Iker y alcanza tus objetivos de fitness. Contáctanos hoy mismo.</p>
+            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                ¡Contacta con Nosotros!
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <!-- Columna 1: Atención al Cliente (ejemplo) -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Atención al Cliente</h4>
+                <p>629 118 388</p>
+                <p class="text-sm">De lunes a viernes de 10 a 20 h.</p>
+            </div>
+
+            <!-- Columna 2: Enlaces Rápidos (ejemplo) -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Tiendas físicas</a></li>
+                    <li><a href="#blog-section">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Información Legal (ejemplo) -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Información Útil</h4>
+                <ul>
+                    <li><a href="#">Aviso legal</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Condiciones de uso</a></li>
+                    <li><a href="#">Uso de cookies</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Síguenos -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Síguenos</h4>
+                <div class="social-icons mb-4">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="text-xs mt-4">&copy; 2025 PowerLife--Iker. Todos los derechos reservados.</p>
+                <p class="text-xs">Diseñado con pasión.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para la funcionalidad del carrusel
+        const carouselSlides = document.getElementById('carouselSlides');
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentIndex = 0;
+
+        // Función para mover las diapositivas del carrusel
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = slides.length - 1;
+            } else if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            }
+            // Aplica la transformación para mostrar la diapositiva correcta
+            carouselSlides.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        // Auto-avance del carrusel cada 5 segundos
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+
+        // Función para cambiar el idioma (simulada)
+        function changeLanguage(lang) {
+            console.log(`Idioma cambiado a: ${lang}`);
+            // En una aplicación real, aquí recargarías el contenido en el idioma seleccionado.
+            alert(`Idioma cambiado a: ${lang}`);
+        }
+    </script>
 </body>
 </html>
