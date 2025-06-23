@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Powerlife - Inicio</title>
-    <!-- Carga de Tailwind CSS para estilos rápidos y responsivos -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Carga de Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -98,13 +96,56 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: block; /* Para centrar con margin: auto */
         }
+
+        /* Estilos del Footer */
+        .footer {
+            background-color: #1a1a1a; /* Fondo más oscuro para el footer */
+            padding: 2rem 1rem;
+            margin-top: auto; /* Empuja el footer hacia abajo */
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+        .footer-links a {
+            color: #bbb;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .footer-social-icons {
+            margin-top: 1.5rem;
+        }
+        .footer-social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 0.8rem;
+            transition: color 0.3s ease;
+        }
+        .footer-social-icons a:hover {
+            color: #dc2626; /* Rojo de Powerlife */
+        }
+        .footer-copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9em;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .footer-links a {
+                margin: 0.5rem 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-black text-white">
 
-    <!-- Barra de Navegación -->
     <nav class="bg-gray-900 p-4 shadow-lg flex justify-between items-center flex-wrap md:flex-row">
-        <!-- Sección izquierda: Logo y enlaces de navegación -->
         <div class="flex items-center flex-wrap md:flex-nowrap navbar-left-section">
             <a href="index.html" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">Powerlife</a>
             <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2 navbar-links">
@@ -114,33 +155,41 @@
                 <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Tienda Física</a></li>
                 <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
                 <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
-                <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Información Útil</a></li>
-            </ul>
+                </ul>
         </div>
 
-        <!-- Elementos de la derecha: Búsqueda, Carrito e Inicio de Sesión -->
         <div class="flex items-center space-x-4 navbar-right">
-            <!-- Icono de Búsqueda -->
             <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Buscar">
                 <i class="fas fa-search"></i>
             </a>
-            <!-- Icono de Cesta -->
             <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Carrito de Compras">
                 <i class="fas fa-shopping-cart"></i>
             </a>
-            <!-- Botón de Inicio de Sesión -->
             <button class="login-btn">
                 Inicio de Sesión
             </button>
         </div>
     </nav>
 
-    <!-- Contenido principal: Una imagen grande -->
     <main class="flex-grow flex items-center justify-center p-4">
         <img src="https://placehold.co/1200x500/dc2626/ffffff?text=POWERLIFE" alt="[Imagen de Powerlife logo]" class="powerlife-hero-image">
     </main>
 
-    <!-- No se incluye footer ni scripts JS adicionales, ya que el usuario pidió "sin contenido" -->
+    <footer class="footer">
+        <div class="flex flex-wrap justify-center items-center gap-4 footer-links">
+            <a href="aviso-legal.html">Aviso Legal</a>
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="condiciones-uso.html">Condiciones de Uso</a>
+            <a href="politica-cookies.html">Política de Cookies</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" aria-label="Síguenos en Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Síguenos en Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Síguenos en YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="footer-copyright">© 2023 Powerlife / SBD SPAIN. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
