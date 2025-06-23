@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Powerlife - Inicio</title>
+    <!-- Carga de Tailwind CSS para estilos rápidos y responsivos -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Carga de Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -85,16 +87,38 @@
             }
         }
 
-        /* Estilos para la imagen grande de Powerlife */
-        .powerlife-hero-image {
-            width: 100%; /* Ajusta al ancho del contenedor */
-            max-width: 1200px; /* Ancho máximo para la imagen */
-            height: 500px; /* Altura más grande para la imagen */
-            object-fit: cover; /* Asegura que la imagen se vea completa */
+        /* Estilos para las secciones de contenido principal */
+        .content-section {
+            display: none; /* Oculto por defecto */
+            max-width: 1200px;
             margin: 2rem auto;
+            padding: 1rem;
+            text-align: center;
+            flex-grow: 1; /* Permite que el contenido se expanda */
+        }
+        .content-section.active {
+            display: block; /* Visible cuando está activo */
+        }
+        .content-section img {
+            width: 100%;
+            max-width: 800px; /* Ancho máximo para la imagen */
+            height: auto;
             border-radius: 0.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: block; /* Para centrar con margin: auto */
+            margin: 2rem auto;
+            display: block;
+        }
+        .content-section h1 {
+            font-size: 2.5em;
+            color: #dc2626; /* Rojo de Powerlife para el título */
+            margin-bottom: 1rem;
+        }
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+            color: #eee;
         }
 
         /* Estilos del Footer */
@@ -145,36 +169,84 @@
 </head>
 <body class="bg-black text-white">
 
+    <!-- Barra de Navegación -->
     <nav class="bg-gray-900 p-4 shadow-lg flex justify-between items-center flex-wrap md:flex-row">
+        <!-- Sección izquierda: Logo y enlaces de navegación -->
         <div class="flex items-center flex-wrap md:flex-nowrap navbar-left-section">
-            <a href="index.html" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">Powerlife</a>
+            <a href="#" onclick="showSection('inicio')" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">Powerlife</a>
             <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2 navbar-links">
-                <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Inicio</a></li>
-                <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Sobre Nosotros</a></li>
-                <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Productos</a></li>
-                <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Tienda Física</a></li>
-                <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
-                <li><a href="#" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
-                </ul>
+                <li><a href="#" onclick="showSection('inicio')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Inicio</a></li>
+                <li><a href="#" onclick="showSection('sobre-nosotros')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Sobre Nosotros</a></li>
+                <li><a href="#" onclick="showSection('productos')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Productos</a></li>
+                <li><a href="#" onclick="showSection('tienda-fisica')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Tienda Física</a></li>
+                <li><a href="#" onclick="showSection('blog')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
+                <li><a href="#" onclick="showSection('contacto')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
+            </ul>
         </div>
 
+        <!-- Elementos de la derecha: Búsqueda, Carrito e Inicio de Sesión -->
         <div class="flex items-center space-x-4 navbar-right">
+            <!-- Icono de Búsqueda -->
             <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Buscar">
                 <i class="fas fa-search"></i>
             </a>
+            <!-- Icono de Cesta -->
             <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Carrito de Compras">
                 <i class="fas fa-shopping-cart"></i>
             </a>
+            <!-- Botón de Inicio de Sesión -->
             <button class="login-btn">
                 Inicio de Sesión
             </button>
         </div>
     </nav>
 
-    <main class="flex-grow flex items-center justify-center p-4">
-        <img src="https://placehold.co/1200x500/dc2626/ffffff?text=POWERLIFE" alt="[Imagen de Powerlife logo]" class="powerlife-hero-image">
+    <!-- Contenido principal: Aquí se mostrarán las diferentes secciones -->
+    <main class="flex-grow flex flex-col items-center justify-center p-4">
+        <!-- Sección de Inicio -->
+        <section id="inicio" class="content-section active">
+            <h1>¡Bienvenido a Powerlife: Tu Fuerza, Tu Vida!</h1>
+            <img src="http://googleusercontent.com/image_generation_content/7" alt="[Image of Powerlifter en acción]">
+            <p>En Powerlife, entendemos que la verdadera fuerza se construye desde adentro hacia afuera. Somos tu compañero definitivo en el viaje del powerlifting, la fuerza y el bienestar general. Desde suplementos de élite hasta el equipo más resistente, nuestra misión es potenciar tu rendimiento y ayudarte a alcanzar nuevas cimas en tu entrenamiento. Explora nuestro sitio para descubrir cómo podemos llevar tu pasión por el levantamiento de pesas al siguiente nivel. ¡Prepárate para transformar tu vida con Powerlife!</p>
+        </section>
+
+        <!-- Sección Sobre Nosotros -->
+        <section id="sobre-nosotros" class="content-section">
+            <h1>Sobre Powerlife / SBD SPAIN: Nuestra Historia, Nuestra Pasión</h1>
+            <img src="http://googleusercontent.com/image_generation_content/8" alt="[Image of Historia de la marca Powerlife]">
+            <p>Powerlife, impulsado por SBD SPAIN, nació de una profunda pasión por el powerlifting y la convicción de que todo atleta merece lo mejor. Con años de experiencia en la industria y un compromiso inquebrantable con la calidad, nos hemos establecido como un referente en el sector. Nuestra misión va más allá de vender productos; buscamos construir una comunidad sólida, ofreciendo el conocimiento y el apoyo necesarios para que cada levantador, desde el principiante hasta el élite, pueda superar sus límites y alcanzar su máximo potencial. Estamos aquí para inspirarte y equiparte en cada paso de tu viaje hacia la fuerza.</p>
+        </section>
+
+        <!-- Sección Productos -->
+        <section id="productos" class="content-section">
+            <h1>Productos Powerlife: Equipamiento y Suplementación de Élite</h1>
+            <img src="http://googleusercontent.com/image_generation_content/9" alt="[Image of Equipamiento y suplementos de powerlifting]">
+            <p>En Powerlife, seleccionamos cuidadosamente cada artículo para asegurar que solo recibas lo mejor para tu entrenamiento. Nuestra gama de productos abarca desde el equipo de levantamiento más duradero y aprobado por federaciones, como rodilleras, cinturones y muñequeras, hasta suplementos nutricionales de vanguardia diseñados para optimizar tu rendimiento, recuperación y crecimiento muscular. Trabajamos con marcas líderes y fórmulas innovadoras para que puedas concentrarte en tus levantamientos sabiendo que estás respaldado por la más alta calidad.</p>
+        </section>
+
+        <!-- Sección Tienda Física -->
+        <section id="tienda-fisica" class="content-section">
+            <h1>Nuestra Tienda Física: Experiencia Powerlife en Persona</h1>
+            <img src="http://googleusercontent.com/image_generation_content/10" alt="[Image of Exterior de una tienda física]">
+            <p>Visita nuestra tienda física en C Lehendakari Aguirre para una experiencia Powerlife completa. Aquí, no solo encontrarás nuestra amplia gama de productos de alta calidad, sino que también podrás probar el equipo, recibir asesoramiento personalizado de nuestros expertos y sumergirte en el ambiente de la comunidad de powerlifting. Es el lugar ideal para aquellos que prefieren tocar y sentir los productos antes de comprarlos y para conectar con otros entusiastas de la fuerza. ¡Esperamos verte pronto!</p>
+        </section>
+
+        <!-- Sección Blog -->
+        <section id="blog" class="content-section">
+            <h1>Blog Powerlife: Tu Fuente de Conocimiento y Motivación</h1>
+            <img src="https://placehold.co/800x400/333/ffffff?text=Blog+Powerlife" alt="[Image of Blog Powerlife]">
+            <p>Sumérgete en el Blog de Powerlife, el epicentro de la información, consejos y las últimas tendencias en el mundo de la fuerza. Aquí encontrarás artículos detallados sobre técnicas de entrenamiento, guías de nutrición, análisis de suplementos, entrevistas con atletas destacados y mucho más. Nuestro objetivo es equiparte con el conocimiento necesario para entrenar de forma más inteligente, segura y efectiva. Ya seas un principiante buscando los fundamentos o un levantador avanzado buscando optimizar su rutina, nuestro blog es tu recurso indispensable.</p>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="content-section">
+            <h1>Contacta con Powerlife: Estamos Aquí para Ayudarte</h1>
+            <img src="https://placehold.co/800x400/333/ffffff?text=Contacto+Powerlife" alt="[Image of Contacto Powerlife]">
+            <p>¿Tienes preguntas sobre nuestros productos, necesitas asesoramiento sobre entrenamiento o simplemente quieres saludar? ¡Nos encantaría escucharte! En Powerlife, valoramos a nuestra comunidad y estamos listos para brindarte el apoyo que necesitas. Puedes contactarnos a través de nuestro correo electrónico, redes sociales, o visitando nuestra tienda física. Consulta la sección de preguntas frecuentes para respuestas rápidas. Tu camino hacia la fuerza es nuestra prioridad, y estamos aquí para acompañarte en cada paso.</p>
+        </section>
     </main>
 
+    <!-- Footer de la página -->
     <footer class="footer">
         <div class="flex flex-wrap justify-center items-center gap-4 footer-links">
             <a href="aviso-legal.html">Aviso Legal</a>
@@ -191,5 +263,51 @@
         <p class="footer-copyright">© 2023 Powerlife / SBD SPAIN. Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to show a specific section and hide others
+            const showSection = (sectionId) => {
+                const sections = document.querySelectorAll('.content-section');
+                sections.forEach(section => {
+                    section.classList.remove('active'); // Hide all sections
+                });
+
+                const activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.classList.add('active'); // Show the target section
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+                }
+            };
+
+            // Attach click listeners to navigation links
+            document.querySelectorAll('.navbar-links a').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default link behavior (page reload)
+                    const sectionName = event.target.innerText.toLowerCase();
+                    let sectionId;
+                    // Map link text to section IDs (handle special characters and spaces)
+                    if (sectionName === 'inicio') sectionId = 'inicio';
+                    else if (sectionName === 'sobre nosotros') sectionId = 'sobre-nosotros';
+                    else if (sectionName === 'productos') sectionId = 'productos';
+                    else if (sectionName === 'tienda física') sectionId = 'tienda-fisica';
+                    else if (sectionName === 'blog') sectionId = 'blog';
+                    else if (sectionName === 'contacto') sectionId = 'contacto';
+                    
+                    if (sectionId) {
+                        showSection(sectionId);
+                    }
+                });
+            });
+
+            // Ensure the brand logo also navigates to the 'Inicio' section
+            document.querySelector('.navbar-brand').addEventListener('click', (event) => {
+                event.preventDefault();
+                showSection('inicio');
+            });
+
+            // Show the 'Inicio' section by default on page load
+            showSection('inicio');
+        });
+    </script>
 </body>
 </html>
