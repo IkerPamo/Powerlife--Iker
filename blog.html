@@ -1,39 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerLife--Iker - Blog de Powerlifting</title>
+    <!-- Carga de Tailwind CSS para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Carga de Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco por defecto */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura de la ventana */
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-brand {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #dc2626; /* Rojo de Tailwind para el título/marca */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .navbar-brand:hover {
+            color: #ef4444; /* Rojo más claro al pasar el ratón */
+        }
+        .icon-link {
+            transition: color 0.3s ease;
+        }
+        .icon-link:hover {
+            color: #93c5fd; /* Azul más claro al pasar el ratón */
+        }
+        .login-btn {
+            background-color: #3b82f6; /* Azul de Tailwind para el botón */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 9999px; /* Bordes completamente redondeados */
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .login-btn:hover {
+            background-color: #2563eb; /* Azul más oscuro al pasar el ratón */
+            transform: scale(1.05);
+        }
+        /* Estilos responsivos para la barra de navegación */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar-left, .navbar-right {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .navbar-left a {
+                margin: 0 10px;
+            }
+            .navbar-brand {
+                margin-bottom: 10px;
+            }
+            .navbar-center-links {
+                order: 3; /* Mueve los enlaces principales al final en móvil */
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
 
-La Importancia del Sueño en la Ganancia de Fuerza
-En el mundo del entrenamiento físico y el desarrollo muscular, se suele poner un énfasis considerable en el tipo de ejercicios, la frecuencia de entrenamiento y la nutrición. Sin embargo, un factor crucial a menudo subestimado es el sueño. Dormir adecuadamente no solo mejora el rendimiento general, sino que también desempeña un papel fundamental en la ganancia de fuerza muscular. La ciencia lo respalda: sin un descanso óptimo, el cuerpo no puede recuperarse ni adaptarse eficientemente al estímulo del entrenamiento.
+        /* Estilos del blog */
+        .blog-post {
+            background-color: #1a1a1a;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .blog-post img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 0.75rem;
+            margin: 1.5rem auto;
+            display: block;
+            object-fit: cover;
+        }
+        .blog-post h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #60a5fa; /* Azul para títulos de posts */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .blog-post p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #9ca3af; /* Gris para metadatos */
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
 
-El papel del sueño en la recuperación muscular
+    <!-- Barra de Navegación -->
+    <nav class="bg-gray-900 p-4 shadow-lg flex justify-between items-center flex-wrap md:flex-row">
+        <!-- Logo/Marca a la izquierda -->
+        <div class="flex items-center mb-4 md:mb-0">
+            <a href="index.html" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">PowerLife--Iker</a>
+        </div>
 
-Cada vez que entrenamos, especialmente con ejercicios de resistencia o fuerza como el levantamiento de pesas, generamos microdesgarros en las fibras musculares. Estos desgarros no son perjudiciales; al contrario, son el primer paso para el crecimiento y fortalecimiento muscular. Pero el cuerpo necesita tiempo y condiciones adecuadas para repararlos, y es durante el sueño cuando este proceso ocurre de forma más intensa.
-Durante las fases profundas del sueño, especialmente en la etapa de sueño de ondas lentas (NREM), el cuerpo libera una gran cantidad de hormona del crecimiento (GH, por sus siglas en inglés). Esta hormona es esencial para la síntesis de proteínas, la regeneración celular y el desarrollo muscular. Si se reduce el tiempo o la calidad del sueño, también se ve comprometida la producción de esta hormona, lo cual puede disminuir significativamente las ganancias de fuerza.
+        <!-- Enlaces de navegación principales (centrados en escritorio, apilados en móvil) -->
+        <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-4 md:mb-0 md:flex-grow md:justify-center navbar-center-links">
+            <li><a href="index.html" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Inicio</a></li>
+            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Sobre Nosotros</a></li>
+            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Productos</a></li>
+            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Tienda Física</a></li>
+            <li><a href="blog.html" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
+            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
+        </ul>
 
-Impacto del sueño en el rendimiento físico
+        <!-- Elementos de la derecha: Búsqueda, Carrito e Inicio de Sesión -->
+        <div class="flex items-center space-x-4">
+            <!-- Icono de Búsqueda -->
+            <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Buscar">
+                <i class="fas fa-search"></i>
+            </a>
+            <!-- Icono de Cesta -->
+            <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Carrito de Compras">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <!-- Botón de Inicio de Sesión -->
+            <button class="login-btn">
+                Inicio de Sesión
+            </button>
+        </div>
+    </nav>
 
-La privación del sueño no solo afecta la recuperación muscular, sino también el rendimiento durante el entrenamiento. Estudios han demostrado que la falta de sueño puede reducir la fuerza máxima, la resistencia muscular y la coordinación. Además, incrementa la percepción de esfuerzo, lo que significa que un mismo ejercicio puede sentirse más extenuante después de una noche de mal descanso.
-Por ejemplo, en atletas privados de sueño, se han registrado disminuciones en la fuerza de agarre, la potencia de salto vertical y la capacidad de sprint. Todo esto indica que un mal descanso no solo impide el progreso, sino que también puede llevar a una regresión en el rendimiento.
+    <!-- Contenido principal del Blog -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <section class="text-center bg-gray-800 p-8 rounded-lg shadow-lg mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-500 mb-4">Nuestro Blog de Powerlifting</h1>
+            <p class="text-xl text-gray-300">Artículos, consejos y novedades para potenciar tu fuerza y conocimiento.</p>
+        </section>
 
-Sueño y equilibrio hormonal
+        <div class="grid grid-cols-1 gap-8">
+            <!-- Entrada de Blog 1: La Importancia de la Técnica en Powerlifting -->
+            <article class="blog-post">
+                <h2>La Importancia de la Técnica en Powerlifting</h2>
+                <img src="https://placehold.co/600x350/60a5fa/ffffff?text=Técnica+Powerlifting" alt="[Image of a person performing a deadlift with perfect technique]">
+                <p>
+                    En el mundo del powerlifting, la técnica no es solo una recomendación; es el pilar fundamental sobre el que se construye el éxito y se previene la lesión. Una ejecución impecable en sentadilla, press de banca y peso muerto no solo te permitirá levantar más peso de forma segura, sino que también optimizará el desarrollo muscular y la eficiencia de tu entrenamiento. Descubre por qué invertir tiempo en perfeccionar tu forma es la mejor estrategia a largo plazo.
+                </p>
+                <p class="blog-meta">Publicado el 23 de Junio, 2025 por Equipo PowerLife--Iker</p>
+            </article>
 
-El sueño también influye directamente en el equilibrio hormonal, lo cual es vital para el desarrollo de fuerza. La testosterona, una hormona clave en el crecimiento muscular tanto en hombres como en mujeres, se ve afectada por la duración y calidad del sueño. Dormir menos de 5 horas por noche puede reducir los niveles de testosterona hasta en un 15% en tan solo una semana.
-Por otro lado, la falta de sueño aumenta el cortisol, una hormona relacionada con el estrés que tiene un efecto catabólico (destructivo) sobre el músculo. Altos niveles de cortisol durante períodos prolongados no solo inhiben la ganancia de fuerza, sino que también favorecen la acumulación de grasa y debilitan el sistema inmunológico.
-Consejos para optimizar el sueño y mejorar la fuerza
-Para maximizar las ganancias de fuerza, es importante establecer una rutina de sueño saludable. Aquí algunos consejos prácticos:
+            <!-- Entrada de Blog 2: Nutrición para el Atleta de Fuerza -->
+            <article class="blog-post">
+                <h2>Nutrición para el Atleta de Fuerza: Combustible para el Crecimiento</h2>
+                <img src="https://placehold.co/600x350/60a5fa/ffffff?text=Nutrición+Atleta" alt="[Image of healthy food on a kitchen counter]">
+                <p>
+                    La dieta juega un papel tan crucial como el entrenamiento en el powerlifting. Lo que comes alimenta tus músculos, repara tejidos y te proporciona la energía necesaria para sesiones intensas. Exploramos los macronutrientes esenciales, la importancia de la hidratación y cómo la suplementación inteligente puede complementar tu ingesta diaria para maximizar la recuperación y el crecimiento.
+                </p>
+                <p class="blog-meta">Publicado el 20 de Junio, 2025 por Nutricionista Invitado</p>
+            </article>
 
-Dormir entre 7 y 9 horas cada noche
-Este es el rango recomendado para la mayoría de los adultos. Los atletas o personas con entrenamientos intensos pueden beneficiarse de dormir incluso más.
+            <!-- Entrada de Blog 3: Superando Estancamientos: Estrategias de Periodización -->
+            <article class="blog-post">
+                <h2>Superando Estancamientos: Estrategias de Periodización Avanzada</h2>
+                <img src="https://placehold.co/600x350/60a5fa/ffffff?text=Periodización+Entrenamiento" alt="[Image of weights on a rack, symbolizing progressive overload]">
+                <p>
+                    Todo atleta de fuerza se enfrenta a estancamientos en algún momento. La clave para seguir progresando reside en la periodización inteligente de tu entrenamiento. Te desvelamos diferentes modelos de periodización (lineal, ondulante, bloque) y cómo puedes implementarlos para mantener tu progreso constante, evitar el sobreentrenamiento y alcanzar nuevos récords personales.
+                </p>
+                <p class="blog-meta">Publicado el 15 de Junio, 2025 por Entrenador Senior</p>
+            </article>
+        </div>
+    </main>
 
-Establecer horarios regulares
-Acostarse y levantarse a la misma hora todos los días ayuda a regular el ritmo circadiano y mejora la calidad del sueño.
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <!-- Columna 1: Atención al Cliente (ejemplo) -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Atención al Cliente</h4>
+                <p>629 118 388</p>
+                <p class="text-sm">De lunes a viernes de 10 a 20 h.</p>
+            </div>
 
-Evitar estimulantes antes de dormir
-La cafeína y otros estimulantes pueden interferir con el inicio del sueño. Evita su consumo al menos 6 horas antes de acostarte.
+            <!-- Columna 2: Enlaces Rápidos (ejemplo) -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Tiendas físicas</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
 
-Crear un ambiente propicio para el sueño
-Dormir en una habitación oscura, fresca y silenciosa puede facilitar un descanso profundo.
+            <!-- Columna 3: Información Legal (ejemplo) -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Información Útil</h4>
+                <ul>
+                    <li><a href="#">Aviso legal</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Condiciones de uso</a></li>
+                    <li><a href="#">Uso de cookies</a></li>
+                </ul>
+            </div>
 
-Reducir el uso de pantallas antes de dormir
-La luz azul de los dispositivos electrónicos suprime la melatonina, una hormona que induce el sueño. Se recomienda evitar pantallas al menos una hora antes de dormir.
+            <!-- Columna 4: Síguenos -->
+            <div class="footer-section">
+                <h4 class="text-red-400">Síguenos</h4>
+                <div class="social-icons mb-4">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="text-xs mt-4">&copy; 2025 PowerLife--Iker. Todos los derechos reservados.</p>
+                <p class="text-xs">Diseñado con pasión.</p>
+            </div>
+        </div>
+    </footer>
 
-Resumiendo, el sueño no es un lujo ni un simple descanso después de un día de actividad. Es un componente esencial del entrenamiento físico y del desarrollo de fuerza. Por más que se entrenen con disciplina y se sigan dietas estrictas, sin un sueño adecuado, los resultados serán limitados. Para cualquier persona que busque mejorar su rendimiento físico, prevenir lesiones y optimizar su fuerza, priorizar el sueño es tan importante como cualquier otro aspecto del entrenamiento.
-
-Dormir bien no solo mejora el cuerpo, también fortalece la mente, refuerza el sistema inmunológico y contribuye a una vida más saludable y equilibrada. Si quieres ser más fuerte, empieza por irte a la cama a tiempo.
+</body>
+</html>
