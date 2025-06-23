@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerLife-Iker - Navegación</title>
+    <title>PowerLife--Iker - Inicio</title>
     <!-- Carga de Tailwind CSS para estilos rápidos y responsivos -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000; /* Fondo negro como en las páginas anteriores */
+            background-color: #000; /* Fondo negro */
             color: #fff; /* Texto blanco por defecto */
             margin: 0;
             padding: 0;
@@ -23,9 +23,13 @@
         .navbar-brand {
             font-size: 1.8em;
             font-weight: bold;
-            color: #60a5fa; /* Azul similar al del título en tus otras páginas */
+            color: #dc2626; /* Rojo de Tailwind para el título/marca */
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .navbar-brand:hover {
+            color: #ef4444; /* Rojo más claro al pasar el ratón */
         }
         .icon-link {
             transition: color 0.3s ease;
@@ -47,30 +51,60 @@
             background-color: #2563eb; /* Azul más oscuro al pasar el ratón */
             transform: scale(1.05);
         }
+        /* Estilos responsivos para la barra de navegación */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar-left, .navbar-right {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .navbar-left a {
+                margin: 0 10px;
+            }
+            .navbar-brand {
+                margin-bottom: 10px;
+            }
+            .navbar-center-links {
+                order: 3; /* Mueve los enlaces principales al final en móvil */
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
     </style>
 </head>
 <body class="bg-black text-white">
 
     <!-- Barra de Navegación -->
-    <nav class="bg-gray-900 p-4 shadow-lg flex justify-between items-center flex-wrap">
+    <nav class="bg-gray-900 p-4 shadow-lg flex justify-between items-center flex-wrap md:flex-row">
         <!-- Logo/Marca a la izquierda -->
         <div class="flex items-center mb-4 md:mb-0">
-            <a href="#" class="navbar-brand text-blue-500 hover:text-blue-400 transition duration-300">PowerLife-Iker</a>
+            <a href="#" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">PowerLife--Iker</a>
         </div>
 
-        <!-- Enlaces de navegación principales -->
-        <ul class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3 mb-4 md:mb-0 md:flex-grow">
-            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Nosotros</a></li>
-            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
+        <!-- Enlaces de navegación principales (centrados en escritorio, apilados en móvil) -->
+        <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-4 md:mb-0 md:flex-grow md:justify-center navbar-center-links">
+            <li><a href="index.html" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Inicio</a></li>
+            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Sobre Nosotros</a></li>
             <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Productos</a></li>
+            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Tienda Física</a></li>
             <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
+            <li><a href="#" class="text-lg text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
         </ul>
 
-        <!-- Elementos de la derecha: Búsqueda e Inicio de Sesión -->
+        <!-- Elementos de la derecha: Búsqueda, Carrito e Inicio de Sesión -->
         <div class="flex items-center space-x-4">
             <!-- Icono de Búsqueda -->
             <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Buscar">
                 <i class="fas fa-search"></i>
+            </a>
+            <!-- Icono de Cesta -->
+            <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Carrito de Compras">
+                <i class="fas fa-shopping-cart"></i>
             </a>
             <!-- Botón de Inicio de Sesión -->
             <button class="login-btn">
@@ -80,6 +114,7 @@
     </nav>
 
     <!-- No se incluye más contenido HTML por debajo de la barra de navegación -->
+    <!-- Este espacio estaría vacío o podría usarse para scripts JS no relacionados con el DOM -->
 
 </body>
 </html>
