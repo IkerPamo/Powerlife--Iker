@@ -3,318 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powerlife - Inicio</title>
-    <!-- Carga de Tailwind CSS para estilos rápidos y responsivos -->
+    <title>Powerlife - Tu Potencial, Desatado</title>
+    <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Carga de Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Usamos Inter como fuente principal, definida en el body */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000; /* Fondo negro */
-            color: #fff; /* Texto blanco por defecto */
-            margin: 0;
-            padding: 0;
-            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura de la ventana */
-            display: flex;
-            flex-direction: column;
+            background-color: #0a0a0a; /* Fondo principal casi negro para elegancia */
+            color: #e5e5e5; /* Texto principal de color gris claro (neutral-200) */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        /* Estilo de la marca con el color rojo */
         .navbar-brand {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #dc2626; /* Rojo de Tailwind para el título/marca */
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 700;
+            color: #dc2626; /* red-600 */
             transition: color 0.3s ease;
-            white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-            margin-right: 1.5rem; /* Espacio entre la marca y el primer enlace */
         }
         .navbar-brand:hover {
-            color: #ef4444; /* Rojo más claro al pasar el ratón */
-        }
-        .icon-link {
-            transition: color 0.3s ease;
-        }
-        .icon-link:hover {
-            color: #93c5fd; /* Azul más claro al pasar el ratón */
-        }
-        .login-btn {
-            background-color: #3b82f6; /* Azul de Tailwind para el botón */
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 9999px; /* Bordes completamente redondeados */
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-        }
-        .login-btn:hover {
-            background-color: #2563eb; /* Azul más oscuro al pasar el ratón */
-            transform: scale(1.05);
-        }
-        /* Estilos responsivos para la barra de navegación */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem 0.5rem; /* Ajustar padding para pantallas pequeñas */
-            }
-            .navbar-left-section {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .navbar-brand {
-                margin-right: 0;
-                margin-bottom: 0.5rem;
-            }
-            .navbar-links {
-                flex-direction: column;
-                width: 100%;
-                margin-top: 0.5rem;
-                gap: 0.5rem; /* Espaciado entre enlaces en móvil */
-                align-items: center;
-            }
-            .navbar-links li a {
-                font-size: 0.875rem; /* Reduce aún más la fuente en móvil si es necesario */
-            }
-            .navbar-right {
-                width: 100%;
-                justify-content: center;
-                margin-top: 1rem;
-            }
+            color: #ef4444; /* red-500 */
         }
 
-        /* Estilos para las secciones de contenido principal */
+        /* Estilo para los enlaces de navegación con acento azul */
+        .nav-link {
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #6366f1; /* indigo-500 */
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Botón principal de login/CTA con color azul */
+        .cta-btn {
+            background-color: #6366f1; /* indigo-500 */
+            color: #e5e7eb; /* gray-200 */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-btn:hover {
+            background-color: #4f46e5; /* indigo-600 */
+            transform: translateY(-2px);
+        }
+
+        /* Estilo de las secciones de contenido con fondo azul oscuro */
         .content-section {
-            display: none; /* Oculto por defecto */
-            max-width: 1200px;
+            display: none;
+            background-color: #1e3a8a; /* blue-900 */
+            border: 1px solid #1d4ed8; /* blue-700 */
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 2rem;
+            width: 100%;
+            max-width: 1100px;
             margin: 2rem auto;
-            padding: 1rem;
-            text-align: center;
-            flex-grow: 1; /* Permite que el contenido se expanda */
         }
         .content-section.active {
-            display: block; /* Visible cuando está activo */
-        }
-        .content-section img {
-            width: 100%;
-            max-width: 800px; /* Ancho máximo para la imagen */
-            height: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin: 2rem auto;
             display: block;
         }
-        .content-section h1 {
-            font-size: 2.5em;
-            color: #dc2626; /* Rojo de Powerlife para el título */
+
+        /* Títulos de sección */
+        .section-title {
+            color: #fafafa; /* neutral-50 */
+            font-weight: 700;
             margin-bottom: 1rem;
         }
-        .content-section p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            max-width: 900px;
-            margin: 0 auto 2rem auto;
-            color: #eee;
+
+        /* Párrafos de sección */
+        .section-paragraph {
+            color: #dbeafe; /* blue-100 */
+            font-size: 1.1rem;
+            line-height: 1.75;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Imágenes y mapas con un borde sutil */
+        .content-media {
+            border-radius: 0.5rem; /* rounded-lg */
+            border: 1px solid #1d4ed8; /* blue-700 */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            object-fit: contain; /* Ajusta la imagen sin deformarla */
         }
 
-        /* Estilos del Footer */
+        /* Footer */
         .footer {
-            background-color: #1a1a1a; /* Fondo más oscuro para el footer */
-            padding: 2rem 1rem;
-            margin-top: auto; /* Empuja el footer hacia abajo */
-            text-align: center;
-            border-top: 1px solid #333;
+            background-color: #171717; /* neutral-900 */
+            border-top: 1px solid #262626; /* neutral-800 */
         }
-        .footer-links a {
-            color: #bbb;
-            margin: 0 1rem;
-            text-decoration: none;
+        .footer-link {
+            color: #a3a3a3; /* neutral-400 */
             transition: color 0.3s ease;
         }
-        .footer-links a:hover {
-            color: #fff;
-            text-decoration: underline;
+        .footer-link:hover {
+            color: #6366f1; /* indigo-500 */
         }
-        .footer-social-icons {
-            margin-top: 1.5rem;
+        .footer-social-icon {
+            color: #a3a3a3; /* neutral-400 */
+            transition: color 0.3s ease, transform 0.2s ease;
         }
-        .footer-social-icons a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 0.8rem;
-            transition: color 0.3s ease;
+        .footer-social-icon:hover {
+            color: #6366f1; /* indigo-500 */
+            transform: scale(1.1);
         }
-        .footer-social-icons a:hover {
-            color: #dc2626; /* Rojo de Powerlife */
+
+        /* --- Estilos para componentes interactivos --- */
+        #search-bar { display: none; }
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); z-index: 40;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden; transition: opacity 0.3s ease;
         }
-        .footer-copyright {
-            margin-top: 1.5rem;
-            font-size: 0.9em;
-            color: #888;
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content {
+            background-color: #171717; border: 1px solid #262626;
+            padding: 2rem; border-radius: 0.75rem; width: 90%; max-width: 400px;
+            transform: scale(0.95); transition: transform 0.3s ease;
         }
-        @media (max-width: 768px) {
-            .footer-links {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .footer-links a {
-                margin: 0.5rem 0;
-            }
+        .modal-overlay.active .modal-content { transform: scale(1); }
+        .cart-sidebar {
+            position: fixed; top: 0; right: -100%; width: 350px; height: 100%;
+            background-color: #171717; z-index: 50;
+            transition: right 0.4s ease-in-out; padding: 1.5rem;
+            border-left: 1px solid #262626; display: flex; flex-direction: column;
         }
+        .cart-sidebar.active { right: 0; }
     </style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-33HL1Q7DPH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-33HL1Q7DPH');
-</script>
-<body class="bg-black text-white">
+<body class="bg-[#0a0a0a]">
 
     <!-- Barra de Navegación -->
-    <nav class="bg-gray-900 p-4 shadow-lg flex justify-between items-center flex-wrap md:flex-row">
-        <!-- Sección izquierda: Logo y enlaces de navegación -->
-        <div class="flex items-center flex-wrap md:flex-nowrap navbar-left-section">
-            <a href="#" onclick="showSection('inicio')" class="navbar-brand text-red-600 hover:text-red-500 transition duration-300">Powerlife</a>
-            <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2 navbar-links">
-                <li><a href="#" onclick="showSection('inicio')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Inicio</a></li>
-                <li><a href="#" onclick="showSection('sobre-nosotros')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Sobre Nosotros</a></li>
-                <li><a href="#" onclick="showSection('productos')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Productos</a></li>
-                <li><a href="#" onclick="showSection('tienda-fisica')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Tienda Física</a></li>
-                <li><a href="#" onclick="showSection('blog')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Blog</a></li>
-                <li><a href="#" onclick="showSection('contacto')" class="text-sm text-white hover:text-blue-400 font-medium transition duration-300">Contacto</a></li>
-            </ul>
+    <header class="bg-purple-900/90 backdrop-blur-sm sticky top-0 z-30 border-b border-purple-800">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Sección izquierda: Logo y enlaces -->
+                <div class="flex items-center space-x-8">
+                    <a href="#" class="navbar-brand text-2xl">SBD</a>
+                    <ul class="hidden md:flex items-center space-x-6 navbar-links">
+                        <li><a href="#" class="nav-link text-neutral-300 hover:text-white">Inicio</a></li>
+                        <li><a href="#" class="nav-link text-neutral-300 hover:text-white">Sobre Nosotros</a></li>
+                        <li><a href="#" class="nav-link text-neutral-300 hover:text-white">Productos</a></li>
+                        <li><a href="#" class="nav-link text-neutral-300 hover:text-white">Tienda Física</a></li>
+                        <li><a href="#" class="nav-link text-neutral-300 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="nav-link text-neutral-300 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Sección derecha: Iconos y botón -->
+                <div class="flex items-center space-x-5">
+                    <a href="#" id="search-icon" class="text-neutral-400 hover:text-indigo-400 transition-colors" aria-label="Buscar"><i class="fas fa-search text-lg"></i></a>
+                    <a href="#" id="cart-icon" class="text-neutral-400 hover:text-indigo-400 transition-colors" aria-label="Carrito"><i class="fas fa-shopping-cart text-lg"></i></a>
+                    <button id="login-btn" class="cta-btn px-4 py-2 rounded-full text-sm">Iniciar Sesión</button>
+                </div>
+            </div>
+        </nav>
+        <!-- Barra de Búsqueda (oculta) -->
+        <div id="search-bar" class="p-4 bg-neutral-800 border-t border-neutral-700">
+            <input type="text" placeholder="Buscar productos, artículos..." class="w-full bg-neutral-900 text-white p-3 rounded-md border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
+    </header>
 
-        <!-- Elementos de la derecha: Búsqueda, Carrito e Inicio de Sesión -->
-        <div class="flex items-center space-x-4 navbar-right">
-            <!-- Icono de Búsqueda -->
-            <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Buscar">
-                <i class="fas fa-search"></i>
-            </a>
-            <!-- Icono de Cesta -->
-            <a href="#" class="text-white hover:text-blue-400 text-xl transition duration-300 icon-link" aria-label="Carrito de Compras">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
-            <!-- Botón de Inicio de Sesión -->
-            <button class="login-btn">
-                Inicio de Sesión
-            </button>
-        </div>
-    </nav>
-
-    <!-- Contenido principal: Aquí se mostrarán las diferentes secciones -->
-    <main class="flex-grow flex flex-col items-center justify-center p-4">
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Sección de Inicio -->
-        <section id="inicio" class="content-section active">
-            <h1>¡Bienvenido a Powerlife: Tu Fuerza, Tu Vida!</h1>
-            <img src="http://googleusercontent.com/image_generation_content/7" alt="[Image of Powerlifter en acción]">
-            <p>En Powerlife, entendemos que la verdadera fuerza se construye desde adentro hacia afuera. Somos tu compañero definitivo en el viaje del powerlifting, la fuerza y el bienestar general. Desde suplementos de élite hasta el equipo más resistente, nuestra misión es potenciar tu rendimiento y ayudarte a alcanzar nuevas cimas en tu entrenamiento. Explora nuestro sitio para descubrir cómo podemos llevar tu pasión por el levantamiento de pesas al siguiente nivel. ¡Prepárate para transformar tu vida con Powerlife!</p>
+        <section id="inicio" class="content-section active text-center">
+            <h1 class="section-title text-4xl md:text-5xl">Tu Potencial, Desatado.</h1>
+            <p class="section-paragraph">En SBD, creemos que la fuerza redefine los límites. Ofrecemos equipamiento de élite y suplementación avanzada para atletas que no se conforman. Es hora de superar tus marcas. Es hora de SBD.</p>
+            <img src="image_b189e7.png" alt="Logo del equipo de Powerlifting" class="content-media mx-auto">
         </section>
 
         <!-- Sección Sobre Nosotros -->
-        <section id="sobre-nosotros" class="content-section">
-            <h1>Sobre Powerlife / SBD SPAIN: Nuestra Historia, Nuestra Pasión</h1>
-            <img src="http://googleusercontent.com/image_generation_content/8" alt="[Image of Historia de la marca Powerlife]">
-            <p>Powerlife, impulsado por SBD SPAIN, nació de una profunda pasión por el powerlifting y la convicción de que todo atleta merece lo mejor. Con años de experiencia en la industria y un compromiso inquebrantable con la calidad, nos hemos establecido como un referente en el sector. Nuestra misión va más allá de vender productos; buscamos construir una comunidad sólida, ofreciendo el conocimiento y el apoyo necesarios para que cada levantador, desde el principiante hasta el élite, pueda superar sus límites y alcanzar su máximo potencial. Estamos aquí para inspirarte y equiparte en cada paso de tu viaje hacia la fuerza.</p>
+        <section id="sobre-nosotros" class="content-section text-center">
+            <h1 class="section-title text-3xl md:text-4xl">Forjados en la Pasión por la Fuerza</h1>
+            <p class="section-paragraph">SBD SPAIN es la culminación de años de experiencia y una dedicación inquebrantable al powerlifting. No solo vendemos productos; construimos una comunidad fuerte, ofreciendo el conocimiento y las herramientas para que cada atleta, desde novato a profesional, alcance su máximo potencial.</p>
+            <img src="https://placehold.co/800x450/1e3a8a/e0e7ff?text=Nuestra+Comunidad" alt="Comunidad de Powerlife" class="content-media mx-auto">
         </section>
 
         <!-- Sección Productos -->
-        <section id="productos" class="content-section">
-            <h1>Productos Powerlife: Equipamiento y Suplementación de Élite</h1>
-            <img src="http://googleusercontent.com/image_generation_content/9" alt="[Image of Equipamiento y suplementos de powerlifting]">
-            <p>En Powerlife, seleccionamos cuidadosamente cada artículo para asegurar que solo recibas lo mejor para tu entrenamiento. Nuestra gama de productos abarca desde el equipo de levantamiento más duradero y aprobado por federaciones, como rodilleras, cinturones y muñequeras, hasta suplementos nutricionales de vanguardia diseñados para optimizar tu rendimiento, recuperación y crecimiento muscular. Trabajamos con marcas líderes y fórmulas innovadoras para que puedas concentrarte en tus levantamientos sabiendo que estás respaldado por la más alta calidad.</p>
+        <section id="productos" class="content-section text-center">
+            <h1 class="section-title text-3xl md:text-4xl">Equipamiento y Suplementación sin Concesiones</h1>
+            <p class="section-paragraph">Cada producto en nuestro catálogo ha sido rigurosamente seleccionado para garantizar la máxima calidad y rendimiento. Desde material aprobado por federaciones internacionales hasta suplementos con formulaciones científicamente probadas, te damos el respaldo que necesitas para levantar más pesado y seguro.</p>
+            <img src="https://placehold.co/800x450/1e3a8a/e0e7ff?text=Innovación+y+Calidad" alt="Productos de Powerlife" class="content-media mx-auto">
         </section>
 
         <!-- Sección Tienda Física -->
-        <section id="tienda-fisica" class="content-section">
-            <h1>Nuestra Tienda Física: Experiencia Powerlife en Persona</h1>
-            <img src="http://googleusercontent.com/image_generation_content/10" alt="[Image of Exterior de una tienda física]">
-            <p>Visita nuestra tienda física en C Lehendakari Aguirre para una experiencia Powerlife completa. Aquí, no solo encontrarás nuestra amplia gama de productos de alta calidad, sino que también podrás probar el equipo, recibir asesoramiento personalizado de nuestros expertos y sumergirte en el ambiente de la comunidad de powerlifting. Es el lugar ideal para aquellos que prefieren tocar y sentir los productos antes de comprarlos y para conectar con otros entusiastas de la fuerza. ¡Esperamos verte pronto!</p>
+        <section id="tienda-fisica" class="content-section text-center">
+            <h1 class="section-title text-3xl md:text-4xl">El Punto de Encuentro de la Fuerza</h1>
+            <p class="section-paragraph">Te invitamos a nuestra tienda física en C/ Lehendakari Aguirre. Un espacio donde puedes probar nuestro equipamiento, recibir asesoramiento experto y conectar con otros apasionados del hierro. La experiencia SBD, en persona.</p>
+            <iframe class="content-media mx-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.749914268138!2d-2.94936168451539!3d43.2578593791368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e503a2a8a8a8b%3A0x8e5d5d5d5d5d!2sLehendakari%20Aguirre%20Kalea%2C%20Bilbao%2C%20Bizkaia!5e0!3m2!1ses!2ses!4v1678886400000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <!-- Sección Blog -->
-        <section id="blog" class="content-section">
-            <h1>Blog Powerlife: Tu Fuente de Conocimiento y Motivación</h1>
-            <img src="https://placehold.co/800x400/333/ffffff?text=Blog+Powerlife" alt="[Image of Blog Powerlife]">
-            <p>Sumérgete en el Blog de Powerlife, el epicentro de la información, consejos y las últimas tendencias en el mundo de la fuerza. Aquí encontrarás artículos detallados sobre técnicas de entrenamiento, guías de nutrición, análisis de suplementos, entrevistas con atletas destacados y mucho más. Nuestro objetivo es equiparte con el conocimiento necesario para entrenar de forma más inteligente, segura y efectiva. Ya seas un principiante buscando los fundamentos o un levantador avanzado buscando optimizar su rutina, nuestro blog es tu recurso indispensable.</p>
+        <section id="blog" class="content-section text-center">
+            <h1 class="section-title text-3xl md:text-4xl">Conocimiento es Poder</h1>
+            <p class="section-paragraph">Nuestro blog es tu biblioteca de fuerza. Artículos sobre técnicas de levantamiento, nutrición deportiva, ciencia de la suplementación y entrevistas con atletas de élite. Entrena de forma más inteligente y alcanza tus objetivos más rápido.</p>
+            <img src="https://placehold.co/800x450/1e3a8a/e0e7ff?text=Blog+de+Expertos" alt="Blog de Powerlife" class="content-media mx-auto">
         </section>
 
         <!-- Sección Contacto -->
-        <section id="contacto" class="content-section">
-            <h1>Contacta con Powerlife: Estamos Aquí para Ayudarte</h1>
-            <img src="https://placehold.co/800x400/333/ffffff?text=Contacto+Powerlife" alt="[Image of Contacto Powerlife]">
-            <p>¿Tienes preguntas sobre nuestros productos, necesitas asesoramiento sobre entrenamiento o simplemente quieres saludar? ¡Nos encantaría escucharte! En Powerlife, valoramos a nuestra comunidad y estamos listos para brindarte el apoyo que necesitas. Puedes contactarnos a través de nuestro correo electrónico, redes sociales, o visitando nuestra tienda física. Consulta la sección de preguntas frecuentes para respuestas rápidas. Tu camino hacia la fuerza es nuestra prioridad, y estamos aquí para acompañarte en cada paso.</p>
+        <section id="contacto" class="content-section text-center">
+            <h1 class="section-title text-3xl md:text-4xl">Estamos para Ayudarte</h1>
+            <p class="section-paragraph">¿Dudas? ¿Necesitas asesoramiento? Nuestro equipo está listo para ayudarte. Contáctanos por email, redes sociales o visítanos. Tu progreso es nuestra prioridad.<br><b class="text-white">Teléfono:</b> <a href="tel:123456789" class="hover:text-indigo-400">123456789</a></p>
+            <img src="https://placehold.co/800x450/1e3a8a/e0e7ff?text=Contacta+con+Nosotros" alt="Contacto Powerlife" class="content-media mx-auto">
         </section>
+        
+        <!-- Secciones Legales -->
+        <section id="aviso-legal" class="content-section"><h1 class="section-title text-2xl">Aviso Legal</h1><p class="section-paragraph text-left">De conformidad con lo dispuesto en la normativa vigente, SBD SPAIN informa a los usuarios de su sitio web sobre las condiciones de uso y la política de privacidad. El uso del sitio web implica la aceptación plena de todas las disposiciones incluidas en este Aviso Legal. Si no está de acuerdo con alguna de las condiciones, no deberá usar este sitio web. Nos reservamos el derecho a modificar esta declaración en cualquier momento.</p></section>
+        <section id="politica-privacidad" class="content-section"><h1 class="section-title text-2xl">Política de Privacidad</h1><p class="section-paragraph text-left">Nos comprometemos a proteger su privacidad. Esta política detalla qué información personal recopilamos, cómo la usamos y las medidas que tomamos para garantizar su seguridad. La información puede incluir nombre, email, y dirección. Usamos esta información para procesar pedidos y comunicarnos con usted. No compartiremos su información con terceros sin su consentimiento, excepto cuando sea necesario para cumplir con la ley.</p></section>
+        <section id="condiciones-uso" class="content-section"><h1 class="section-title text-2xl">Condiciones de Uso</h1><p class="section-paragraph text-left">El acceso y uso de este sitio web están sujetos a estos términos y condiciones. Al utilizarlo, usted acepta estar legalmente obligado por estos términos. SBD SPAIN puede cambiar estos términos en cualquier momento. El contenido de este sitio, incluyendo textos, gráficos e imágenes, tiene fines informativos únicamente.</p></section>
+        <section id="politica-cookies" class="content-section"><h1 class="section-title text-2xl">Política de Cookies</h1><p class="section-paragraph text-left">Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario. Una cookie es un pequeño archivo de texto que se almacena en su navegador. Las usamos para mantener su sesión, recordar preferencias y analizar el tráfico del sitio. Puede configurar su navegador para que rechace las cookies, pero algunas características del sitio pueden no funcionar correctamente.</p></section>
     </main>
 
-    <!-- Footer de la página -->
-    <footer class="footer">
-        <div class="flex flex-wrap justify-center items-center gap-4 footer-links">
-            <a href="aviso-legal.html">Aviso Legal</a>
-            <a href="politica-privacidad.html">Política de Privacidad</a>
-            <a href="condiciones-uso.html">Condiciones de Uso</a>
-            <a href="politica-cookies.html">Política de Cookies</a>
+    <!-- Footer -->
+    <footer class="footer mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 footer-links">
+                    <a data-section="aviso-legal" class="footer-link">Aviso Legal</a>
+                    <a data-section="politica-privacidad" class="footer-link">Política de Privacidad</a>
+                    <a data-section="condiciones-uso" class="footer-link">Condiciones de Uso</a>
+                    <a data-section="politica-cookies" class="footer-link">Política de Cookies</a>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.facebook.com/powerlife-iker" target="_blank" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://www.twitter.com/powerlife-iker" target="_blank" class="footer-social-icon" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://www.instagram.com/powerlife-iker" target="_blank" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.youtube.com/c/powerlife-iker" target="_blank" class="footer-social-icon" aria-label="YouTube"><i class="fab fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+            <p class="text-center text-neutral-500 text-sm mt-8">© 2025 SBD SPAIN. Todos los derechos reservados.</p>
         </div>
-        <div class="footer-social-icons">
-            <a href="#" aria-label="Síguenos en Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Síguenos en Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Síguenos en YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="footer-copyright">© 2023 Powerlife / SBD SPAIN. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Modal de Inicio de Sesión -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content relative">
+            <button id="close-modal-btn" class="absolute top-4 right-5 text-2xl text-neutral-400 hover:text-white">&times;</button>
+            <h2 class="text-2xl font-bold text-center mb-6 text-indigo-500">Iniciar Sesión</h2>
+            <form>
+                <div class="mb-4"><label for="email" class="block text-sm font-medium text-neutral-300 mb-2">Correo Electrónico</label><input type="email" id="email" class="w-full p-2 rounded bg-neutral-800 border border-neutral-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"></div>
+                <div class="mb-6"><label for="password" class="block text-sm font-medium text-neutral-300 mb-2">Contraseña</label><input type="password" id="password" class="w-full p-2 rounded bg-neutral-800 border border-neutral-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"></div>
+                <button type="submit" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2.5 px-4 rounded-full transition duration-300">Entrar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Sidebar del Carrito de Compras -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="flex justify-between items-center mb-6"><h2 class="text-2xl font-bold text-indigo-500">Tu Cesta</h2><button id="close-cart-btn" class="text-2xl text-neutral-400 hover:text-white">&times;</button></div>
+        <div class="flex-grow flex items-center justify-center"><p class="text-neutral-400">Tu cesta está vacía.</p></div>
+        <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2.5 px-4 rounded-full transition duration-300">Finalizar Compra</button>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Function to show a specific section and hide others
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.navbar-links a');
+
             const showSection = (sectionId) => {
-                const sections = document.querySelectorAll('.content-section');
-                sections.forEach(section => {
-                    section.classList.remove('active'); // Hide all sections
-                });
-
+                sections.forEach(section => section.classList.remove('active'));
                 const activeSection = document.getElementById(sectionId);
-                if (activeSection) {
-                    activeSection.classList.add('active'); // Show the target section
-                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
-                }
-            };
-
-            // Attach click listeners to navigation links
-            document.querySelectorAll('.navbar-links a').forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent default link behavior (page reload)
-                    const sectionName = event.target.innerText.toLowerCase();
-                    let sectionId;
-                    // Map link text to section IDs (handle special characters and spaces)
-                    if (sectionName === 'inicio') sectionId = 'inicio';
-                    else if (sectionName === 'sobre nosotros') sectionId = 'sobre-nosotros';
-                    else if (sectionName === 'productos') sectionId = 'productos';
-                    else if (sectionName === 'tienda física') sectionId = 'tienda-fisica';
-                    else if (sectionName === 'blog') sectionId = 'blog';
-                    else if (sectionName === 'contacto') sectionId = 'contacto';
-                    
-                    if (sectionId) {
-                        showSection(sectionId);
+                if (activeSection) activeSection.classList.add('active');
+                
+                // Actualizar enlace activo en la barra de navegación
+                const sectionMap = { 'inicio': 'Inicio', 'sobre-nosotros': 'Sobre Nosotros', 'productos': 'Productos', 'tienda-fisica': 'Tienda Física', 'blog': 'Blog', 'contacto': 'Contacto' };
+                navLinks.forEach(link => {
+                    link.classList.remove('active', 'text-white');
+                    if (link.innerText === sectionMap[sectionId]) {
+                        link.classList.add('active', 'text-white');
                     }
                 });
-            });
 
-            // Ensure the brand logo also navigates to the 'Inicio' section
-            document.querySelector('.navbar-brand').addEventListener('click', (event) => {
-                event.preventDefault();
-                showSection('inicio');
-            });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
 
-            // Show the 'Inicio' section by default on page load
+            const setupNavLinks = (selector, isFooter = false) => {
+                document.querySelectorAll(selector).forEach(link => {
+                    link.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        const sectionId = isFooter 
+                            ? event.target.dataset.section 
+                            : event.target.innerText.toLowerCase().replace(/\s+/g, '-');
+                        
+                        const sectionMap = { 'inicio': 'inicio', 'sobre-nosotros': 'sobre-nosotros', 'productos': 'productos', 'tienda-física': 'tienda-fisica', 'blog': 'blog', 'contacto': 'contacto' };
+                        const finalSectionId = sectionMap[sectionId] || sectionId;
+
+                        if (document.getElementById(finalSectionId)) {
+                            showSection(finalSectionId);
+                        }
+                    });
+                });
+            };
+
+            setupNavLinks('.navbar-links a');
+            setupNavLinks('.footer-links a', true);
+
+            document.querySelector('.navbar-brand').addEventListener('click', (e) => { e.preventDefault(); showSection('inicio'); });
+            
+            // Lógica para búsqueda, modal y carrito
+            const searchIcon = document.getElementById('search-icon');
+            const searchBar = document.getElementById('search-bar');
+            const loginBtn = document.getElementById('login-btn');
+            const loginModal = document.getElementById('login-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const cartIcon = document.getElementById('cart-icon');
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const closeCartBtn = document.getElementById('close-cart-btn');
+
+            searchIcon.addEventListener('click', (e) => { e.preventDefault(); searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block'; });
+            loginBtn.addEventListener('click', () => loginModal.classList.add('active'));
+            closeModalBtn.addEventListener('click', () => loginModal.classList.remove('active'));
+            loginModal.addEventListener('click', (e) => { if (e.target === loginModal) loginModal.classList.remove('active'); });
+            cartIcon.addEventListener('click', (e) => { e.preventDefault(); cartSidebar.classList.add('active'); });
+            closeCartBtn.addEventListener('click', () => cartSidebar.classList.remove('active'));
+
+            // Iniciar en la sección de 'inicio'
             showSection('inicio');
         });
     </script>
